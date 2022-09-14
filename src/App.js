@@ -2,10 +2,6 @@ import React from "react";
 import classes from "./App.module.css";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
-import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { Routes, Route, Link, NavLink, useNavigate } from "react-router-dom";
 
 const App = () => {
@@ -43,7 +39,7 @@ const App = () => {
               position: "absolute",
               left: "2rem",
             }}
-            onClick={() => navigate("series")}
+            onClick={() => navigate("/")}
           >
             IMDb-API
           </h4>
@@ -61,9 +57,29 @@ const App = () => {
           </NavLink>
         </BottomNavigation>
       </Box>
+
+      <Box className={classes.footer}>
+        <BottomNavigation
+          style={{
+            backgroundColor: "rgb(238, 197, 144)",
+          }}
+        >
+          <h4
+            style={{
+              textAlign: "center",
+              fontSize: "1.3rem",
+              cursor: "pointer",
+              wordSpacing: "1rem",
+            }}
+          >
+            2022 <em>Copyright</em> Dženan Košuta
+          </h4>
+        </BottomNavigation>
+      </Box>
       <Routes>
-        <Route path="movies" element={<h1>Naslov prve stranice</h1>} />
-        <Route path="series" element={<h1>Ovo je naslov druge stranice</h1>} />
+        <Route path="/" element={<h1>Naslov prve stranice</h1>} />
+        <Route path="movies" element={<h1>Movies</h1>} />
+        <Route path="series" element={<h1>Series</h1>} />
         {/* <Route path="team" element={<TeamPage />} /> */}
       </Routes>
     </div>
