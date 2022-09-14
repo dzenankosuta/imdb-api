@@ -3,6 +3,7 @@ import classes from "./App.module.css";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import { Routes, Route, Link, NavLink, useNavigate } from "react-router-dom";
+import HomePage from "./components/pages/HomePage/HomePage";
 
 const App = () => {
   const [value, setValue] = React.useState(0);
@@ -77,7 +78,7 @@ const App = () => {
         </BottomNavigation>
       </Box>
       <Routes>
-        <Route path="/" element={<h1>Naslov prve stranice</h1>} />
+        <Route path="/" element={<HomePage />} />
         <Route path="movies" element={<h1>Movies</h1>} />
         <Route path="series" element={<h1>Series</h1>} />
         {/* <Route path="team" element={<TeamPage />} /> */}
