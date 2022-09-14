@@ -5,6 +5,7 @@
 
 .cards {
   margin: auto;
+  margin-bottom: 6rem;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -9,7 +9,7 @@ const BASE_URL = "https://imdb-api.com";
 const API_KEY = "k_68sg5of3";
 const API_KEY2 = "k_028a4s7l";
 
-const HomePage = () => {
+const Series = () => {
   const [showed, setShowed] = useState([]);
   const getMovies = () => {
     axios
@@ -56,4 +56,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Series;
