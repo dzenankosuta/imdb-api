@@ -11,6 +11,7 @@ const API_KEY2 = "k_028a4s7l";
 
 const HomePage = () => {
   const [showed, setShowed] = useState([]);
+  //
   const getMovies = () => {
     axios
       .get(`https://imdb-api.com/en/API/MostPopularTVs/k_028a4s7l`)

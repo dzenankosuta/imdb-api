@@ -14,7 +14,7 @@ const CardWatch = ({ image, title, description }) => {
           height="220"
           image={image}
           alt="logo"
-          objectFit="contain"
+          // objectFit="contain"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
