@@ -59,6 +59,12 @@ const App = () => {
         </BottomNavigation>
       </Box>
 
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="movies" element={<h1>Movies</h1>} />
+        <Route path="series" element={<h1>Series</h1>} />
+      </Routes>
+
       <Box className={classes.footer}>
         <BottomNavigation
           style={{
@@ -77,12 +83,6 @@ const App = () => {
           </h4>
         </BottomNavigation>
       </Box>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="movies" element={<h1>Movies</h1>} />
-        <Route path="series" element={<h1>Series</h1>} />
-        {/* <Route path="team" element={<TeamPage />} /> */}
-      </Routes>
     </div>
   );
 };
