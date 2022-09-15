@@ -46,12 +46,14 @@ const App = () => {
           </h4>
           <NavLink
             to="movies"
+            className={classes.linkcss}
             style={({ isActive }) => (isActive ? activeStyle : linkStyle)}
           >
             Movies
           </NavLink>
           <NavLink
             to="series"
+            className={classes.linkcss}
             style={({ isActive }) => (isActive ? activeStyle : linkStyle)}
           >
             Series

@@ -11,10 +11,10 @@ const CardWatch = ({ image, title, description }) => {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="220"
+          height="400"
           image={image}
           alt="logo"
-          // objectFit="contain"
+          style={{ objectFit: "fill" }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

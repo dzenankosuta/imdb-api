@@ -4,25 +4,35 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import CardWatch from "../../Card/CardWatch";
 import axios from "axios";
+import titleAPIs from "./titleAPIs.json";
 
 const BASE_URL = "https://imdb-api.com";
-const API_KEY = "k_68sg5of3";
-const API_KEY2 = "k_028a4s7l";
+const API_KEY = "k_68sg5of3"; // dzenan_kosuta@hotmail.com - dzenankosuta
+const API_KEY2 = "k_028a4s7l"; // dzenan.kosuta14@gmail.com - dzenan.kosuta
+const API_KEY3 = "k_028a4s7l"; // dzenisinedz@gmail.com - dzenispepic
+const API_KEY4 = "k_t3p1kco1"; // - dzemildupljak dzenoimdb-api
 
 const HomePage = () => {
+  const [input, setInput] = useState();
   const [showed, setShowed] = useState([]);
-  //
+  const numPages = Math.ceil(showed.length / 9);
   const getMovies = () => {
-    axios
-      .get(`https://imdb-api.com/en/API/MostPopularTVs/k_028a4s7l`)
-      .then((res) => {
-        setShowed(res.data.results);
-        console.log(showed);
-      });
+    // axios
+    //   .get(`https://imdb-api.com/en/API/MostPopularTVs/k_t3p1kco1`)
+    //   .then((res) => {
+    //     setShowed(res.data.results);
+    //     console.log(showed);
+    //   });
+
+    // axios.get("./titleAPIs.json").then((res) => {
+    //   setShowed(res.data.results);
+    // });
+    setShowed(titleAPIs.results);
+    console.log(showed);
   };
   useEffect(() => {
     getMovies();
-  }, []);
+  }, [showed]);
   return (
     <>
       <div className={classes.search}>
@@ -34,24 +44,31 @@ const HomePage = () => {
           noValidate
           autoComplete="off"
         >
-          <TextField
-            id="outlined-basic"
-            label="Search by Title"
-            variant="outlined"
-          />
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+            }}
+          >
+            <TextField
+              style={{ width: "22rem" }}
+              id="outlined-basic"
+              label="Search by Title"
+              variant="outlined"
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+            />
+          </form>
         </Box>
       </div>
       <div className={classes.cards}>
-        {/* {showed
-          .map((movie) => (
-            <CardWatch
-              image={movie.results[0].image}
-              title={movie.results[0].title}
-              description={movie.results[0].description}
-            />
-          ))
-          .slice(0, 3)} */}
-        <CardWatch image="" title="" description="" />
+        {showed.map((movie) => (
+          <CardWatch
+            key={movie.id}
+            image={movie.image}
+            title={movie.title}
+            description={movie.description}
+          />
+        ))}
       </div>
     </>
   );
