@@ -30,6 +30,7 @@ const HomePage = () => {
     setShowed(titleAPIs.results);
     console.log(showed);
   };
+  const filtered = showed.filter((movie) => movie.title.includes(input));
   useEffect(() => {
     getMovies();
   }, [showed]);
@@ -37,38 +38,60 @@ const HomePage = () => {
     <>
       <div className={classes.search}>
         <Box
-          component="form"
+          // component="form"
           sx={{
             "& > :not(style)": { m: 1, width: "50ch", textAlign: "center" },
           }}
           noValidate
           autoComplete="off"
         >
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
+          <TextField
+            style={{ width: "22rem" }}
+            id="outlined-basic"
+            label="Search by Title"
+            variant="outlined"
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                setInput("");
+              }
             }}
-          >
-            <TextField
-              style={{ width: "22rem" }}
-              id="outlined-basic"
-              label="Search by Title"
-              variant="outlined"
-              value={input}
-              onChange={(event) => setInput(event.target.value)}
-            />
-          </form>
+          />
         </Box>
       </div>
       <div className={classes.cards}>
-        {showed.map((movie) => (
-          <CardWatch
-            key={movie.id}
-            image={movie.image}
-            title={movie.title}
-            description={movie.description}
-          />
-        ))}
+        {filtered.length > 0
+          ? filtered
+              .map((movie) => (
+                <CardWatch
+                  key={movie.id}
+                  image={movie.image}
+                  title={movie.title}
+                  description={movie.description}
+                />
+              ))
+              .slice(0, 3)
+          : showed
+              .map((movie) => (
+                <CardWatch
+                  key={movie.id}
+                  image={movie.image}
+                  title={movie.title}
+                  description={movie.description}
+                />
+              ))
+              .slice(0, 3)}
+        {/* {showed
+          .map((movie) => (
+            <CardWatch
+              key={movie.id}
+              image={movie.image}
+              title={movie.title}
+              description={movie.description}
+            />
+          ))
+          .slice(0, 3)} */}
       </div>
     </>
   );
