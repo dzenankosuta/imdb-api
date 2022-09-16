@@ -6,6 +6,7 @@ import { Routes, Route, Link, NavLink, useNavigate } from "react-router-dom";
 import HomePage from "./components/pages/HomePage/HomePage";
 import Movies from "./components/pages/Movies/Movies";
 import Series from "./components/pages/Series/Series";
+import OneTitleMovie from "./components/pages/HomePage/OneTitleMovie";
 
 const App = () => {
   const [value, setValue] = React.useState(0);
@@ -65,9 +66,11 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/:id" element={<OneTitleMovie />} />
         <Route path="movies" element={<Movies />} />
         <Route path="movies/:id" element={<h1>One movie</h1>} />
         <Route path="series" element={<Series />} />
+        <Route path="series/:id" element={<h1>One TV Serie</h1>} />
       </Routes>
 
       <Box className={classes.footer}>

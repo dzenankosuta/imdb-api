@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 
-const CardWatch = ({ image, title, description }) => {
+const CardWatch = ({ image, title, description, id }) => {
   const navigate = useNavigate();
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -28,7 +28,20 @@ const CardWatch = ({ image, title, description }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary" onClick={() => navigate(":id")}>
+        <Button
+          size="small"
+          color="primary"
+          onClick={() =>
+            navigate(`${id}`, {
+              state: {
+                id: id,
+                image: image,
+                title: title,
+                description: description,
+              },
+            })
+          }
+        >
           Show more
         </Button>
       </CardActions>
