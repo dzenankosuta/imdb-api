@@ -1,18 +1,17 @@
-body {
-  min-height: 100vh;
-}
-
-.search {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  text-align: center;
+.body {
+  min-height: 43.5vh;
 }
 
 .cards {
   margin: auto;
+  margin-top: 6rem;
   margin-bottom: 6rem;
   width: 80%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
+}
+
+.pagination {
+  margin-left: 38%;
 }

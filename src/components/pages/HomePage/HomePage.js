@@ -35,7 +35,7 @@ const HomePage = () => {
     getMovies();
   }, [showed]);
   return (
-    <>
+    <div className={classes.body}>
       <div className={classes.search}>
         <Box
           // component="form"
@@ -93,7 +93,7 @@ const HomePage = () => {
           ))
           .slice(0, 3)} */}
       </div>
-    </>
+    </div>
   );
 };
 

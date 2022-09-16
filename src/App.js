@@ -4,6 +4,8 @@ import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import { Routes, Route, Link, NavLink, useNavigate } from "react-router-dom";
 import HomePage from "./components/pages/HomePage/HomePage";
+import Movies from "./components/pages/Movies/Movies";
+import Series from "./components/pages/Series/Series";
 
 const App = () => {
   const [value, setValue] = React.useState(0);
@@ -63,8 +65,8 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="movies" element={<h1>Movies</h1>} />
-        <Route path="series" element={<h1>Series</h1>} />
+        <Route path="movies" element={<Movies />} />
+        <Route path="series" element={<Series />} />
       </Routes>
 
       <Box className={classes.footer}>
@@ -73,14 +75,7 @@ const App = () => {
             backgroundColor: "rgb(238, 197, 144)",
           }}
         >
-          <h4
-            style={{
-              textAlign: "center",
-              fontSize: "1.3rem",
-              cursor: "pointer",
-              wordSpacing: "1rem",
-            }}
-          >
+          <h4 className={classes.footertext}>
             2022 <em>Copyright</em> Dženan Košuta
           </h4>
         </BottomNavigation>

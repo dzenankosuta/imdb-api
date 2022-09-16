@@ -1,58 +1,48 @@
 import React, { useEffect, useState } from "react";
-import classes from "./HomePage.module.css";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+import classes from "./Series.module.css";
 import CardWatch from "../../Card/CardWatch";
 import axios from "axios";
+import series from "./series.json";
 
 const BASE_URL = "https://imdb-api.com";
-const API_KEY = "k_68sg5of3";
-const API_KEY2 = "k_028a4s7l";
+const API_KEY = "k_68sg5of3"; // dzenan_kosuta@hotmail.com - dzenankosuta
+const API_KEY2 = "k_028a4s7l"; // dzenan.kosuta14@gmail.com - dzenan.kosuta
+const API_KEY3 = "k_028a4s7l"; // dzenisinedz@gmail.com - dzenispepic
+const API_KEY4 = "k_t3p1kco1"; // - dzemildupljak dzenoimdb-api
 
 const Series = () => {
   const [showed, setShowed] = useState([]);
-  const getMovies = () => {
-    axios
-      .get(`https://imdb-api.com/en/API/MostPopularTVs/k_028a4s7l`)
-      .then((res) => {
-        setShowed(res.data.results);
-        console.log(showed);
-      });
+  const numPages = Math.ceil(showed.length / 9);
+  const getSeries = () => {
+    // axios
+    //   .get(`https://imdb-api.com/en/API/MostPopularTVs/k_t3p1kco1`)
+    //   .then((res) => {
+    //     setShowed(res.data.results);
+    //     console.log(showed);
+    //   });
+
+    // axios.get("./titleAPIs.json").then((res) => {
+    //   setShowed(res.data.results);
+    // });
+    setShowed(series.results);
+    console.log(showed);
   };
   useEffect(() => {
-    getMovies();
-  }, []);
+    getSeries();
+  }, [showed]);
   return (
-    <>
-      <div className={classes.search}>
-        <Box
-          component="form"
-          sx={{
-            "& > :not(style)": { m: 1, width: "50ch", textAlign: "center" },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-          <TextField
-            id="outlined-basic"
-            label="Search by Title"
-            variant="outlined"
-          />
-        </Box>
-      </div>
+    <div className={classes.body}>
       <div className={classes.cards}>
-        {/* {showed
-          .map((movie) => (
-            <CardWatch
-              image={movie.results[0].image}
-              title={movie.results[0].title}
-              description={movie.results[0].description}
-            />
-          ))
-          .slice(0, 3)} */}
-        <CardWatch image="" title="" description="" />
+        {showed.map((serie) => (
+          <CardWatch
+            key={serie.id}
+            image={serie.image}
+            title={serie.title}
+            description={serie.description}
+          />
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
