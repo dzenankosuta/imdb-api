@@ -5,7 +5,8 @@ body {
 .search {
   margin-top: 3rem;
   margin-bottom: 3rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .cards {

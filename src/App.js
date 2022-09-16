@@ -12,15 +12,15 @@ const App = () => {
   const navigate = useNavigate();
   let linkStyle = {
     backgroundColor: "rgb(238, 197, 144)",
-    fontSize: "1.9rem",
+    fontSize: "1.3rem",
     color: "rgb(17, 14, 11)",
-    margin: "0 2rem",
+    margin: "1rem 2rem",
   };
   let activeStyle = {
     backgroundColor: "rgb(238, 197, 144)",
-    fontSize: "1.9rem",
+    fontSize: "1.3rem",
     color: "rgb(68, 146, 80)",
-    margin: "0 2rem",
+    margin: "1rem 2rem",
   };
   return (
     <div>
@@ -51,14 +51,14 @@ const App = () => {
             className={classes.linkcss}
             style={({ isActive }) => (isActive ? activeStyle : linkStyle)}
           >
-            Movies
+            MOVIES
           </NavLink>
           <NavLink
             to="series"
             className={classes.linkcss}
             style={({ isActive }) => (isActive ? activeStyle : linkStyle)}
           >
-            Series
+            SERIES
           </NavLink>
         </BottomNavigation>
       </Box>
