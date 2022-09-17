@@ -66,6 +66,7 @@ const HomePage = () => {
               .map((movie) => (
                 <CardWatch
                   key={movie.id}
+                  id={movie.id}
                   image={movie.image}
                   title={movie.title}
                   description={movie.description}

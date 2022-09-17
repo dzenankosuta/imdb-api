@@ -12,23 +12,19 @@ const App = () => {
   const [value, setValue] = React.useState(0);
   const navigate = useNavigate();
   let linkStyle = {
-    backgroundColor: "rgb(238, 197, 144)",
-    fontSize: "1.3rem",
-    color: "rgb(17, 14, 11)",
-    margin: "1rem 2rem",
+    backgroundColor: "rgb(28, 35, 49)",
+    color: "#ffffff",
   };
   let activeStyle = {
-    backgroundColor: "rgb(238, 197, 144)",
-    fontSize: "1.3rem",
-    color: "rgb(68, 146, 80)",
-    margin: "1rem 2rem",
+    backgroundColor: "rgba(78, 96, 134, 0.5)",
+    color: "#c0f3ff",
   };
   return (
     <div>
       <Box className={classes.header}>
         <BottomNavigation
           style={{
-            backgroundColor: "rgb(238, 197, 144)",
+            backgroundColor: "rgb(28, 35, 49)",
           }}
           showLabels
           value={value}
@@ -38,6 +34,7 @@ const App = () => {
         >
           <h4
             style={{
+              color: "#ffffff",
               fontSize: "2rem",
               cursor: "pointer",
               position: "absolute",
@@ -68,9 +65,9 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<OneTitleMovie />} />
         <Route path="movies" element={<Movies />} />
-        <Route path="movies/:id" element={<h1>One movie</h1>} />
+        <Route path="movies/:id" element={<OneTitleMovie />} />
         <Route path="series" element={<Series />} />
-        <Route path="series/:id" element={<h1>One TV Serie</h1>} />
+        <Route path="series/:id" element={<OneTitleMovie />} />
       </Routes>
 
       <Box className={classes.footer}>

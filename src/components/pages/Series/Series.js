@@ -46,6 +46,7 @@ const Series = () => {
           .map((serie) => (
             <CardWatch
               key={serie.id}
+              id={serie.id}
               image={serie.image}
               title={serie.title}
               description={serie.description}
