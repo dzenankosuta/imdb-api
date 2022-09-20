@@ -5,9 +5,12 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import MovieContext from "../../MovieContext";
 
 const CardWatch = ({ image, title, description, id }) => {
   const navigate = useNavigate();
+  const { stars } = useContext(MovieContext);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -45,6 +48,9 @@ const CardWatch = ({ image, title, description, id }) => {
           Show more
         </Button>
       </CardActions>
+      <Typography variant="body2" color="text.secondary">
+        Rating: {stars}
+      </Typography>
     </Card>
   );
 };
