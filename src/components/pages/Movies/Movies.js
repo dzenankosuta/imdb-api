@@ -5,10 +5,6 @@ import movies from "../../../common/movies.json";
 import Pagination from "@mui/material/Pagination";
 
 const BASE_URL = "https://imdb-api.com";
-const API_KEY = "k_68sg5of3"; // dzenan_kosuta@hotmail.com - dzenankosuta
-const API_KEY2 = "k_028a4s7l"; // dzenan.kosuta14@gmail.com - dzenan.kosuta
-const API_KEY3 = "k_028a4s7l"; // dzenisinedz@gmail.com - dzenispepic
-const API_KEY4 = "k_t3p1kco1"; // - dzemildupljak dzenoimdb-api
 
 const Movies = () => {
   const [input, setInput] = useState();
@@ -18,6 +14,7 @@ const Movies = () => {
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
+    window.scrollTo(0, 0);
   };
   const moviesPerPage = 9;
   const numberOfMoviesVistited = (page - 1) * moviesPerPage;
@@ -33,7 +30,7 @@ const Movies = () => {
     // axios.get("./titleAPIs.json").then((res) => {
     //   setShowed(res.data.results);
     // });
-    setShowed(movies.results);
+    setShowed(movies.items);
     console.log(showed);
   };
   useEffect(() => {
@@ -49,7 +46,7 @@ const Movies = () => {
               id={movie.id}
               image={movie.image}
               title={movie.title}
-              description={movie.description}
+              description={movie.crew}
             />
           ))
           .slice(

@@ -5,10 +5,6 @@ import series from "../../../common/series.json";
 import Pagination from "@mui/material/Pagination";
 
 const BASE_URL = "https://imdb-api.com";
-const API_KEY = "k_68sg5of3"; // dzenan_kosuta@hotmail.com - dzenankosuta
-const API_KEY2 = "k_028a4s7l"; // dzenan.kosuta14@gmail.com - dzenan.kosuta
-const API_KEY3 = "k_028a4s7l"; // dzenisinedz@gmail.com - dzenispepic
-const API_KEY4 = "k_t3p1kco1"; // - dzemildupljak dzenoimdb-api
 
 const Series = () => {
   const [showed, setShowed] = useState([]);
@@ -17,6 +13,7 @@ const Series = () => {
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
+    window.scrollTo(0, 0);
   };
   const seriesPerPage = 9;
   const numberOfSeriesVisited = (page - 1) * seriesPerPage;
@@ -32,7 +29,7 @@ const Series = () => {
     // axios.get("./titleAPIs.json").then((res) => {
     //   setShowed(res.data.results);
     // });
-    setShowed(series.results);
+    setShowed(series.items);
     console.log(showed);
   };
   useEffect(() => {
@@ -48,7 +45,7 @@ const Series = () => {
               id={serie.id}
               image={serie.image}
               title={serie.title}
-              description={serie.description}
+              description={serie.crew}
             />
           ))
           .slice(numberOfSeriesVisited, numberOfSeriesVisited + seriesPerPage)}
