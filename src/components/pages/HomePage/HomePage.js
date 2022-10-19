@@ -29,7 +29,9 @@ const HomePage = () => {
     setShowed(titleAPIs.results);
     console.log(showed);
   };
-  const filtered = showed.filter((movie) => movie.title.includes(input));
+  const filtered = showed.filter((movie) =>
+    movie.title.toLowerCase().includes(input.toLowerCase())
+  );
   useEffect(() => {
     getMovies();
   }, [showed]);
