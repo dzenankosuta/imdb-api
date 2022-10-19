@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import MovieContext from "../../MovieContext";
+import MovieContext from "../../context/MovieContext";
 
 const CardWatch = ({ image, title, description, id }) => {
   const navigate = useNavigate();

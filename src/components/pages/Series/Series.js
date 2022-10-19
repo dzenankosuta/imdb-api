@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Series.module.css";
 import CardWatch from "../../Card/CardWatch";
-import axios from "axios";
-import series from "./series.json";
+import series from "../../../common/series.json";
 import Pagination from "@mui/material/Pagination";
 
 const BASE_URL = "https://imdb-api.com";

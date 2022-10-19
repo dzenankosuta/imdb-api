@@ -3,8 +3,7 @@ import classes from "./HomePage.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import CardWatch from "../../Card/CardWatch";
-import axios from "axios";
-import titleAPIs from "./titleAPIs.json";
+import titleAPIs from "../../../common/titleAPIs.json";
 
 const BASE_URL = "https://imdb-api.com";
 const API_KEY = "k_68sg5of3"; // dzenan_kosuta@hotmail.com - dzenankosuta

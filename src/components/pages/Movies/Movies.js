@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Movies.module.css";
 import CardWatch from "../../Card/CardWatch";
-import axios from "axios";
-import movies from "./movies.json";
+import movies from "../../../common/movies.json";
 import Pagination from "@mui/material/Pagination";
 
 const BASE_URL = "https://imdb-api.com";

@@ -7,7 +7,7 @@ import HomePage from "./components/pages/HomePage/HomePage";
 import Movies from "./components/pages/Movies/Movies";
 import Series from "./components/pages/Series/Series";
 import OneTitleMovie from "./components/pages/HomePage/OneTitleMovie";
-import { MovieProvider } from "./MovieContext";
+import { MovieProvider } from "./context/MovieContext";
 
 const App = () => {
   const [value, setValue] = React.useState(0);

@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useLocation, useParams } from "react-router-dom";
-import MovieContext from "../../../MovieContext";
+import MovieContext from "../../../context/MovieContext";
 
 const OneTitleMovie = () => {
   const { state } = useLocation();
