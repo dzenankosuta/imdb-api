@@ -30,7 +30,7 @@ const HomePage = () => {
     console.log(showed);
   };
   const filtered = showed.filter((movie) =>
-    movie.title.toLowerCase().includes(input.toLowerCase())
+    movie.title.toLowerCase().includes(input)
   );
   useEffect(() => {
     getMovies();
