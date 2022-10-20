@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./App.module.css";
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
-import { Routes, Route, Link, NavLink, useNavigate } from "react-router-dom";
+import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
 import HomePage from "./components/pages/HomePage/HomePage";
 import Movies from "./components/pages/Movies/Movies";
 import Series from "./components/pages/Series/Series";

@@ -5,16 +5,16 @@ import TextField from "@mui/material/TextField";
 import CardWatch from "../../Card/CardWatch";
 import titleAPIs from "../../../common/titleAPIs.json";
 
-const BASE_URL = "https://imdb-api.com";
-const API_KEY = "k_68sg5of3"; // dzenan_kosuta@hotmail.com - dzenankosuta
-const API_KEY2 = "k_028a4s7l"; // dzenan.kosuta14@gmail.com - dzenan.kosuta
-const API_KEY3 = "k_028a4s7l"; // dzenisinedz@gmail.com - dzenispepic
-const API_KEY4 = "k_t3p1kco1"; // - dzemildupljak dzenoimdb-api
+// const BASE_URL = "https://imdb-api.com";
+// const API_KEY = "k_68sg5of3";  dzenan_kosuta@hotmail.com - dzenankosuta
+// const API_KEY2 = "k_028a4s7l";  dzenan.kosuta14@gmail.com - dzenan.kosuta
+// const API_KEY3 = "k_028a4s7l";  dzenisinedz@gmail.com - dzenispepic
+// const API_KEY4 = "k_t3p1kco1";  - dzemildupljak dzenoimdb-api
 
 const HomePage = () => {
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
   const [showed, setShowed] = useState([]);
-  const numPages = Math.ceil(showed.length / 9);
+  // const numPages = Math.ceil(showed.length / 9);
   const getMovies = () => {
     // axios
     //   .get(`https://imdb-api.com/en/API/MostPopularTVs/k_t3p1kco1`)
@@ -27,7 +27,7 @@ const HomePage = () => {
     //   setShowed(res.data.results);
     // });
     setShowed(titleAPIs.results);
-    console.log(showed);
+    // console.log(showed);
   };
   const filtered = showed.filter((movie) =>
     movie.title.toLowerCase().includes(input)

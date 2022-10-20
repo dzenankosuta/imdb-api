@@ -13,7 +13,7 @@
   top: 0;
   z-index: 10;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -24,7 +24,7 @@
   background-color: rgb(28, 35, 49);
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   border-style: outset;
   border-color: rgb(53, 66, 92);
 }
