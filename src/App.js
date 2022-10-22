@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./App.module.css";
 import Box from "@mui/material/Box";
-import BottomNavigation from "@mui/material/BottomNavigation";
 import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
 import HomePage from "./components/pages/HomePage/HomePage";
 import Movies from "./components/pages/Movies/Movies";
@@ -24,11 +23,10 @@ const App = () => {
     <div>
       <MovieProvider>
         <Box className={classes.header}>
-          <BottomNavigation
+          <div
             style={{
               backgroundColor: "rgb(28, 35, 49)",
             }}
-            showLabels
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
@@ -60,7 +58,7 @@ const App = () => {
             >
               SERIES
             </NavLink>
-          </BottomNavigation>
+          </div>
         </Box>
 
         <Routes>
@@ -73,7 +71,7 @@ const App = () => {
         </Routes>
 
         <Box className={classes.footer}>
-          <BottomNavigation
+          <div
             style={{
               backgroundColor: "rgb(238, 197, 144)",
             }}
@@ -81,7 +79,7 @@ const App = () => {
             <h4 className={classes.footertext}>
               2022 <em>Copyright</em> Dženan Košuta
             </h4>
-          </BottomNavigation>
+          </div>
         </Box>
       </MovieProvider>
     </div>
