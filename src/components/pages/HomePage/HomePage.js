@@ -14,7 +14,6 @@ import titleAPIs from "../../../common/titleAPIs.json";
 const HomePage = () => {
   const [input, setInput] = useState("");
   const [showed, setShowed] = useState([]);
-  // const numPages = Math.ceil(showed.length / 9);
   const getMovies = () => {
     // axios
     //   .get(`https://imdb-api.com/en/API/MostPopularTVs/k_t3p1kco1`)

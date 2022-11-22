@@ -4,10 +4,9 @@ import CardWatch from "../../Card/CardWatch";
 import movies from "../../../common/movies.json";
 import Pagination from "@mui/material/Pagination";
 
-const BASE_URL = "https://imdb-api.com";
+// const BASE_URL = "https://imdb-api.com";
 
 const Movies = () => {
-  const [input, setInput] = useState();
   const [showed, setShowed] = useState([]);
   const numPages = Math.ceil(showed.length / 9);
 
@@ -35,6 +34,7 @@ const Movies = () => {
   };
   useEffect(() => {
     getMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showed]);
   return (
     <div className={classes.body}>

@@ -4,7 +4,7 @@ import CardWatch from "../../Card/CardWatch";
 import series from "../../../common/series.json";
 import Pagination from "@mui/material/Pagination";
 
-const BASE_URL = "https://imdb-api.com";
+// const BASE_URL = "https://imdb-api.com";
 
 const Series = () => {
   const [showed, setShowed] = useState([]);
@@ -34,6 +34,7 @@ const Series = () => {
   };
   useEffect(() => {
     getSeries();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showed]);
   return (
     <div className={classes.body}>
