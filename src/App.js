@@ -2,11 +2,11 @@ import React from "react";
 import classes from "./App.module.css";
 import Box from "@mui/material/Box";
 import { Routes, Route, NavLink, useNavigate } from "react-router-dom";
-import HomePage from "./components/pages/HomePage/HomePage";
-import Movies from "./components/pages/Movies/Movies";
-import Series from "./components/pages/Series/Series";
-import OneTitleMovie from "./components/pages/HomePage/OneTitleMovie";
 import { MovieProvider } from "./context/MovieContext";
+import HomePage from "./pages/HomePage/HomePage";
+import Movies from "./pages/Movies/Movies";
+import Series from "./pages/Series/Series";
+import OneTitleMovie from "./pages/HomePage/OneTitleMovie";
 
 const App = () => {
   const [value, setValue] = React.useState(0);

@@ -4,13 +4,13 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
-import { useLocation, useParams } from "react-router-dom";
-import MovieContext from "../../../context/MovieContext";
+import { Button, CardActionArea } from "@mui/material";
+import { useLocation } from "react-router-dom";
+import MovieContext from "../../context/MovieContext";
 
 const OneTitleMovie = () => {
   const { state } = useLocation();
-  const { id } = useParams();
+  // const { id } = useParams();
   const movie_id = state.id;
   const image = state.image;
   const title = state.title;

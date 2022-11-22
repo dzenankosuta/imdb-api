@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import classes from "./HomePage.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import CardWatch from "../../Card/CardWatch";
-import titleAPIs from "../../../common/titleAPIs.json";
+import CardWatch from "../../components/Card/CardWatch";
+import titleAPIs from "../../common/titleAPIs.json";
 
 // const BASE_URL = "https://imdb-api.com";
 // const API_KEY = "k_68sg5of3";  dzenan_kosuta@hotmail.com - dzenankosuta
